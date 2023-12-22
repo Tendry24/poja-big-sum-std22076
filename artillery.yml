@@ -1,0 +1,14 @@
+config:
+  target: 'https://uyfk31sphe.execute-api.eu-west-3.amazonaws.com'
+  phases:
+    - duration: 60
+      arrivalRate: 10
+
+scenarios:
+  - flow:
+      - get:
+          url: '/Prod/ping'
+
+metrics:
+  - name: 'p99'
+    path: 'latency.p99'
